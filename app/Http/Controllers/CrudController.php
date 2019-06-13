@@ -37,8 +37,10 @@ class CrudController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|string|max:20',
-            'body' => 'required'
+            'address' => 'required|string|max:20',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required|integer'
         ]);
         TableCrud::create($request->all());
         return redirect()->route('crud.index')->with('success', 'Data created success');
@@ -78,8 +80,10 @@ class CrudController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required|string|max:20',
-            'body' => 'required'
+            'address' => 'required|string|max:20',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required|integer'
         ]);
         TableCrud::find($id)->update($request->all());
         return redirect()->route('crud.index')->with('success', 'Data udpate success');

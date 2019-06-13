@@ -9,12 +9,22 @@
     </h1>
     <div class="row">
         <div class="col">
-            <h5>Title: {{ $crud->title }}</h5>
+            <h5>Address: {{ $crud->address }}</h5>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h5>Details: {{ $crud->body }}</h5>
+            <h5>City: {{ $crud->city }}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5>State: {{ $crud->state }}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5>Zip: {{ $crud->zip }}</h5>
         </div>
     </div>
 </div>

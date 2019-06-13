@@ -15,8 +15,10 @@ class CreateTableCrud extends Migration
     {
         Schema::create('table_crud', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->string('body', 1000);
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->integer('zip');
             $table->timestamps();
         });
     }

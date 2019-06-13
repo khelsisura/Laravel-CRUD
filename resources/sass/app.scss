@@ -1,10 +1,8 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Quicksand");
-@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css"); 
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import "variables";
+@import 'variables';
 
 // Bootstrap
-@import "../../bootstrap/css/bootstrap.min.css";
-@import "../../bootstrap/css/custom.css";
+@import '~bootstrap/scss/bootstrap';

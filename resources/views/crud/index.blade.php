@@ -22,8 +22,10 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Details</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Zip</th>
                     <th scope="col" class="text-center">Action</th>
                 </tr>
             </thead>
@@ -36,10 +38,16 @@
                         {{$incrementalID++}}
                     </td>
                     <td>
-                        {{ $value->title }}
+                        {{ $value->address }}
                     </td>
                     <td>
-                        {{ $value->body }}
+                        {{ $value->city }}
+                    </td>
+                    <td>
+                        {{ $value->state }}
+                    </td>
+                    <td>
+                        {{ $value->zip }}
                     </td>
                     <td class="pt-2 text-center">
                         <a class="btn btn-link text-info" target="_self" href="{{route('crud.show', $value->id)}}">
