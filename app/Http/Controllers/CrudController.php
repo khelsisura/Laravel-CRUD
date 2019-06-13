@@ -71,7 +71,7 @@ class CrudController extends Controller
     public function edit($id)
     {
         $crud = TableCrud::find($id);
-        $countries = CountryState::getCountries();
+        $countries = array_merge([$crud->state => $crud->state], CountryState::getCountries());
         return view('crud.edit', compact('crud'), compact('countries'));
     }
 
@@ -84,6 +84,10 @@ class CrudController extends Controller
      */
     public function update(Request $request, $id)
     {
+        echo $request['state'];
+        if (strlen($request['state']) < 3) {
+            $request['state'] = CountryState::getCountryName($request->state);
+        }
         $this->validate($request, [
             'address' => 'required|string|max:20',
             'city' => 'required',

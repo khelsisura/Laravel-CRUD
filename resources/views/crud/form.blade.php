@@ -14,7 +14,7 @@
 <div class="row mb-2 mr-2 pb-3">
     <div class="col-6">
         <label for="state">State:</label>
-        {{ Form::select('state', $countries, NULL, ['class'=>'form-control', 'id' => 'state']) }}
+        {{ Form::select('state', $countries,  NULL, ['class'=>'form-control', 'id' => 'state']) }}
     </div>
     <div class="col-2">
         <label for="zip">Zip Code:</label>
