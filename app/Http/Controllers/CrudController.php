@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TableCrud;
+use CountryState;
+use Illuminate\Support\Facades\DB;
 
 class CrudController extends Controller
 {
@@ -25,7 +27,8 @@ class CrudController extends Controller
      */
     public function create()
     {
-        return view('crud.create');
+        $countries = CountryState::getCountries();
+        return view('crud.create', compact('countries'));
     }
 
     /**
@@ -36,6 +39,7 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
+        $request['state'] = CountryState::getCountryName($request->state);
         $this->validate($request, [
             'address' => 'required|string|max:20',
             'city' => 'required',
@@ -67,7 +71,8 @@ class CrudController extends Controller
     public function edit($id)
     {
         $crud = TableCrud::find($id);
-        return view('crud.edit', compact('crud'));
+        $countries = CountryState::getCountries();
+        return view('crud.edit', compact('crud'), compact('countries'));
     }
 
     /**

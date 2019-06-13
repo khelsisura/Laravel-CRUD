@@ -41,7 +41,7 @@
                         {{ $value->address }}
                     </td>
                     <td>
-                        {{ $value->city }}
+                        {{ $value->city }} 
                     </td>
                     <td>
                         {{ $value->state }}
